@@ -1,32 +1,38 @@
 [
-  {
-    "topic": "customer",
-    "market": "home_decor",
-    "insight": "Customers often compare design, quality, price and delivery reliability before buying mirrors."
-  },
-  {
-    "topic": "customer",
-    "market": "home_decor",
-    "insight": "Homeowners commonly look for mirrors for bedrooms, living rooms, bathrooms and entryways."
-  },
-  {
-    "topic": "problem",
-    "market": "home_decor",
-    "insight": "Customers may worry about fragile products being damaged during delivery."
-  },
-  {
-    "topic": "competitor",
-    "market": "home_decor",
-    "insight": "Customers can compare local stores, marketplaces and specialized online sellers."
-  },
-  {
-    "topic": "decision_factor",
-    "market": "home_decor",
-    "insight": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
-  },
-  {
-    "topic": "trend",
-    "market": "home_decor",
-    "insight": "Online home-decor shopping allows customers to compare products before visiting physical stores."
-  }
+  {"topic": "customer", "market": "home_decor", "insight": "Customers often compare design, quality, price and delivery reliability before buying mirrors."},
+  {"topic": "customer", "market": "home_decor", "insight": "Homeowners commonly look for mirrors for bedrooms, living rooms, bathrooms and entryways."},
+  {"topic": "problem", "market": "home_decor", "insight": "Customers may worry about fragile products being damaged during delivery."},
+  {"topic": "competitor", "market": "home_decor", "insight": "Customers can compare local stores, marketplaces and specialized online sellers."},
+  {"topic": "decision_factor", "market": "home_decor", "insight": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."},
+  {"topic": "trend", "market": "home_decor", "insight": "Buyers increasingly look at product photos in real rooms before deciding."},
+
+  {"topic": "customer", "market": "cooling", "insight": "Households and small offices buy cooling products mainly before and during the hot season."},
+  {"topic": "problem", "market": "cooling", "insight": "Customers worry about electricity consumption and installation effort."},
+  {"topic": "competitor", "market": "cooling", "insight": "Customers compare brands, local dealers, online marketplaces and second-hand sellers."},
+  {"topic": "decision_factor", "market": "cooling", "insight": "Cooling capacity, power consumption, price, warranty and installation support influence the choice."},
+  {"topic": "trend", "market": "cooling", "insight": "Energy-efficient models and installation-included offers attract more attention."},
+
+  {"topic": "customer", "market": "coffee_beverages", "insight": "Office workers and students buy coffee for a regular daily routine."},
+  {"topic": "problem", "market": "coffee_beverages", "insight": "Customers worry about taste, freshness and whether the product suits their preference."},
+  {"topic": "competitor", "market": "coffee_beverages", "insight": "Customers choose between cafes, instant brands and online specialty sellers."},
+  {"topic": "decision_factor", "market": "coffee_beverages", "insight": "Taste, price, freshness, pack size and brand trust influence the purchase."},
+  {"topic": "trend", "market": "coffee_beverages", "insight": "Subscription packs and ready-to-drink formats are getting more attention."},
+
+  {"topic": "customer", "market": "audio_electronics", "insight": "Students, commuters and gamers buy headphones for daily listening and calls."},
+  {"topic": "problem", "market": "audio_electronics", "insight": "Customers worry about sound quality, comfort, battery life and durability."},
+  {"topic": "competitor", "market": "audio_electronics", "insight": "Customers compare many brands on marketplaces and in electronics stores."},
+  {"topic": "decision_factor", "market": "audio_electronics", "insight": "Sound quality, battery life, price, comfort and warranty influence the choice."},
+  {"topic": "trend", "market": "audio_electronics", "insight": "Wireless earbuds and noise cancellation are widely requested features."},
+
+  {"topic": "customer", "market": "construction_services", "insight": "Homeowners, contractors and AC installers need precise cutting and drilling work done on site."},
+  {"topic": "problem", "market": "construction_services", "insight": "Customers worry about dust, noise, wall damage and whether the work will be clean and accurate."},
+  {"topic": "competitor", "market": "construction_services", "insight": "Customers find local contractors by referrals, phone enquiries and online listings."},
+  {"topic": "decision_factor", "market": "construction_services", "insight": "Price quotes, experience, equipment quality, speed and clean finishing influence the hiring decision."},
+  {"topic": "trend", "market": "construction_services", "insight": "Customers prefer providers who show real before and after work photos and respond quickly."},
+
+  {"topic": "customer", "market": "general", "insight": "Customers look for a clear reason why this product or service fits their need."},
+  {"topic": "problem", "market": "general", "insight": "Customers may hesitate if price, quality or trust is unclear."},
+  {"topic": "competitor", "market": "general", "insight": "Customers compare several local and online options before deciding."},
+  {"topic": "decision_factor", "market": "general", "insight": "Price, quality, reviews and ease of buying influence the decision."},
+  {"topic": "trend", "market": "general", "insight": "Clear product communication and real customer proof build trust."}
 ]

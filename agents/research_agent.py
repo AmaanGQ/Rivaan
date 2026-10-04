@@ -1,8 +1,21 @@
 import json
+import re
 from pathlib import Path
 
 from agents.base_agent import BaseAgent
 from agents.insight_engine import InsightEngine
+
+
+MARKET_KEYWORDS = {
+    "home_decor": ["mirror", "decor", "furniture", "lamp", "curtain"],
+    "cooling": ["air conditioner", "ac", "cooler", "fan", "refrigerator"],
+    "coffee_beverages": ["coffee", "tea", "beverage"],
+    "audio_electronics": ["headphone", "headphones", "earphone", "earbuds", "speaker"],
+    "construction_services": [
+        "core cutting", "wall cutting", "drilling", "construction",
+        "repair", "installation", "service", "contractor"
+    ],
+}
 
 
 class ResearchAgent(BaseAgent):
@@ -17,6 +30,16 @@ class ResearchAgent(BaseAgent):
         with open(file_path, "r", encoding="utf-8") as file:
             return json.load(file)
 
+    def detect_market(self, product):
+        text = product.lower()
+
+        for market, keywords in MARKET_KEYWORDS.items():
+            for keyword in keywords:
+                if re.search(rf"\b{re.escape(keyword)}\b", text):
+                    return market
+
+        return "general"
+
     def research(self, product, target_market, goal):
 
         research_questions = [
@@ -28,7 +51,13 @@ class ResearchAgent(BaseAgent):
             f"What trends are affecting the {product} market?"
         ]
 
-        market_data = self.load_market_data()
+        matched_market = self.detect_market(product)
+
+        all_data = self.load_market_data()
+        market_data = [
+            item for item in all_data
+            if item["market"] == matched_market
+        ]
 
         insights = self.insight_engine.analyze(market_data)
 
@@ -36,6 +65,7 @@ class ResearchAgent(BaseAgent):
             "product": product,
             "target_market": target_market,
             "marketing_goal": goal,
+            "matched_market": matched_market,
             "research_questions": research_questions,
             "market_data": market_data,
             "insights": insights,

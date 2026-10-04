@@ -9,6 +9,8 @@ class StrategyAgent(BaseAgent):
     def create_strategy(self, research_result):
 
         strategy = {
+            "product": research_result["product"],
+            "matched_market": research_result.get("matched_market", "general"),
             "marketing_goal": research_result["marketing_goal"],
             "target_market": research_result["target_market"],
             "key_messages": [],
