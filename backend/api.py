@@ -1,9 +1,12 @@
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from agents.template_agent import TemplateAgent
+from agents.research_agent import ResearchAgent
+from agents.strategy_agent import StrategyAgent
+from agents.campaign_agent import CampaignAgent
+from agents.decision_engine import DecisionEngine
 
 
 # =====================================
@@ -12,8 +15,8 @@ from agents.template_agent import TemplateAgent
 
 app = FastAPI(
     title="RIVAAN AI Marketing Assistant",
-    description="AI-powered marketing intelligence and creative generation",
-    version="0.3.0"
+    description="Rule-based marketing intelligence and creative generation",
+    version="0.4.0"
 )
 
 app.add_middleware(
@@ -25,6 +28,10 @@ app.add_middleware(
 )
 
 template_agent = TemplateAgent()
+research_agent = ResearchAgent()
+strategy_agent = StrategyAgent()
+campaign_agent = CampaignAgent()
+decision_engine = DecisionEngine()
 
 
 # =====================================
@@ -56,7 +63,7 @@ def home():
     return {
         "message": "Welcome to RIVAAN AI Marketing Assistant",
         "status": "running",
-        "version": "0.3.0"
+        "version": "0.4.0"
     }
 
 
@@ -83,7 +90,7 @@ def dashboard():
 
 
 # =====================================
-# CAMPAIGN GENERATOR
+# CAMPAIGN GENERATOR (agent pipeline)
 # =====================================
 
 @app.post("/generate-campaign")
@@ -99,156 +106,71 @@ def generate_campaign(request: CampaignRequest):
             detail="Product, audience and marketing goal are required"
         )
 
-    product_lower = product.lower()
+    try:
+        # Step 1: Research
+        research = research_agent.research(product, audience, goal)
 
-    product_profiles = {
-        "mirror": {
-            "concerns": [
-                "Breakage during transportation",
-                "Protective packaging",
-                "Interior design compatibility"
-            ],
-            "angles": [
-                "Bring elegance to your interiors",
-                "Designed for modern living spaces",
-                "Discover functional style"
-            ]
-        },
+        # Step 2: Strategy
+        strategy = strategy_agent.create_strategy(research)
 
-        "air conditioner": {
-            "concerns": [
-                "Cooling performance",
-                "Electricity consumption",
-                "Installation requirements"
-            ],
-            "angles": [
-                "Comfort for everyday living",
-                "Explore cooling solutions",
-                "Make your space more comfortable"
-            ]
-        },
+        # Step 3: Campaign
+        campaign = campaign_agent.create_campaign(strategy)
 
-        "coffee": {
-            "concerns": [
-                "Taste preferences",
-                "Product quality",
-                "Convenience"
-            ],
-            "angles": [
-                "Make every coffee moment count",
-                "Discover your next favorite cup",
-                "Bring warmth to your routine"
-            ]
-        },
+        # Step 4: Decisions
+        decisions = decision_engine.evaluate(campaign, research["insights"])
 
-        "headphones": {
-            "concerns": [
-                "Sound quality",
-                "Comfort",
-                "Device compatibility"
-            ],
-            "angles": [
-                "Find your sound",
-                "Make every listening moment count",
-                "Explore your audio experience"
-            ]
-        }
-    }
+    except Exception as error:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Campaign generation failed: {str(error)}"
+        )
 
-    detected_profile = next(
-        (
-            key for key in product_profiles
-            if key in product_lower
-        ),
-        None
-    )
+    matched_market = research["matched_market"]
 
-    profile = product_profiles.get(
-        detected_profile,
-        {
-            "concerns": [
-                "Product value",
-                "Customer requirements",
-                "Ease of use"
-            ],
-            "angles": [
-                f"Discover {product}",
-                f"Explore what {product} offers",
-                "Find a solution for your needs"
-            ]
-        }
-    )
+    # Keep the same response shape the dashboard already expects
+    core_messages = campaign["core_message"]
+    ctas = campaign["call_to_action"]
 
     return {
         "status": "success",
         "product": product,
-        "product_category": detected_profile or "general",
+        "product_category": matched_market,
         "audience": audience,
         "goal": goal,
         "budget": request.budget,
 
         "research": {
-            "product_category": detected_profile or "general",
-            "market_context": (
-                f"Marketing considerations for {product}"
-            )
+            "product_category": matched_market,
+            "market_context": f"Marketing considerations for {product}"
         },
 
-        "insights": {
-            "customer_insights": [
-                f"Understand the needs of {audience}",
-                f"Evaluate customer expectations for {product}"
-            ],
-            "pain_points": profile["concerns"],
-            "competitor_insights": [
-                "Compare product value propositions",
-                "Review competitor messaging"
-            ],
-            "decision_factors": [
-                "Product value",
-                "Customer trust",
-                "Purchase convenience"
-            ],
-            "trends": [
-                "Clear product communication",
-                "Relevant audience messaging"
-            ]
-        },
+        "insights": research["insights"],
 
         "strategy": {
-            "marketing_goal": goal,
-            "target_market": audience,
-            "key_messages": profile["angles"],
-            "campaign_ideas": [
-                f"Create a product-focused campaign for {product}",
-                "Highlight relevant customer benefits",
-                "Use a clear call to action"
-            ],
-            "recommendations": [
-                "Test different creative approaches",
-                "Track engagement and conversions"
-            ]
+            "marketing_goal": strategy["marketing_goal"],
+            "target_market": strategy["target_market"],
+            "key_messages": strategy["key_messages"],
+            "campaign_ideas": strategy["campaign_ideas"],
+            "recommendations": strategy["recommendations"]
         },
 
         "campaign": {
-            "objective": goal,
-            "target_audience": audience,
-            "core_message": f"Discover {product}",
-            "ad_angles": profile["angles"],
-            "call_to_action": "Learn More",
-            "content_ideas": [
-                "Product showcase",
-                "Customer benefit post",
-                "Promotional creative"
-            ]
+            "objective": campaign["objective"],
+            "target_audience": campaign["target_audience"],
+            "core_message": core_messages[0] if core_messages else f"Discover {product}",
+            "ad_angles": campaign["ad_angles"],
+            "call_to_action": ctas[0] if ctas else "Learn More",
+            "content_ideas": campaign["content_ideas"]
         },
 
         "decisions": {
-            "status": "evaluation_completed",
-            "recommendation": "Review campaign before publishing"
+            "status": decisions["status"],
+            "total_decisions": decisions["total_decisions"],
+            "recommendation": "Review campaign before publishing",
+            "decisions": decisions["decisions"]
         },
 
-        "note": "Prototype uses local rule-based product profiles."
+        "note": "Rule-based agent pipeline: Research, Strategy, Campaign, Decision."
     }
 
 
