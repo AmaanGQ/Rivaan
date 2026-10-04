@@ -1,0 +1,356 @@
+[
+    {
+        "product": "mirror",
+        "target_market": "houseowners in mumbai",
+        "marketing_goal": "website traffic",
+        "campaign": {
+            "objective": "website traffic",
+            "target_audience": "houseowners in mumbai",
+            "core_message": [
+                "Address customer concern: Customers may worry about fragile products being damaged during delivery."
+            ],
+            "ad_angles": [
+                "Highlight: Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
+            ],
+            "call_to_action": [
+                "Enquire now to explore available mirror designs."
+            ],
+            "content_ideas": [
+                "Create a product showcase highlighting mirror designs, dimensions and delivery information."
+            ]
+        },
+        "decisions": {
+            "campaign_objective": "website traffic",
+            "total_decisions": 2,
+            "decisions": [
+                {
+                    "issue": "Customers may worry about fragile products being damaged during delivery.",
+                    "decision": "Address customer concerns about delivery safety.",
+                    "reason": "The market data identifies delivery damage as a potential customer concern.",
+                    "recommended_action": "Include packaging and delivery information in campaign messaging."
+                },
+                {
+                    "issue": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions.",
+                    "decision": "Highlight important purchase factors.",
+                    "reason": "These factors may influence customer purchasing decisions.",
+                    "recommended_action": "Include product dimensions, visuals, pricing and available reviews in campaign content."
+                }
+            ],
+            "status": "evaluation_completed"
+        },
+        "status": "generated"
+    },
+    {
+        "product": "mirror",
+        "target_market": "houseowners in mumbai",
+        "marketing_goal": "reach",
+        "campaign": {
+            "objective": "reach",
+            "target_audience": "houseowners in mumbai",
+            "core_message": [
+                "Address customer concern: Customers may worry about fragile products being damaged during delivery."
+            ],
+            "ad_angles": [
+                "Highlight: Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
+            ],
+            "call_to_action": [
+                "Enquire now to explore available mirror designs."
+            ],
+            "content_ideas": [
+                "Create a product showcase highlighting mirror designs, dimensions and delivery information."
+            ]
+        },
+        "decisions": {
+            "campaign_objective": "reach",
+            "total_decisions": 2,
+            "decisions": [
+                {
+                    "issue": "Customers may worry about fragile products being damaged during delivery.",
+                    "decision": "Address customer concerns about delivery safety.",
+                    "reason": "The market data identifies delivery damage as a potential customer concern.",
+                    "recommended_action": "Include packaging and delivery information in campaign messaging."
+                },
+                {
+                    "issue": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions.",
+                    "decision": "Highlight important purchase factors.",
+                    "reason": "These factors may influence customer purchasing decisions.",
+                    "recommended_action": "Include product dimensions, visuals, pricing and available reviews in campaign content."
+                }
+            ],
+            "status": "evaluation_completed"
+        },
+        "performance": {
+            "impressions": 10000,
+            "clicks": 150,
+            "enquiries": 6,
+            "ctr_percent": 1.5,
+            "conversion_rate_percent": 4.0,
+            "observations": [
+                "Click-through rate is below the demo benchmark. Review the ad message and creative.",
+                "Enquiry conversion is below the demo benchmark. Review the landing page and enquiry process."
+            ],
+            "status": "evaluation_completed"
+        },
+        "status": "evaluated"
+    },
+    {
+        "product": "mirror",
+        "target_market": "home decor customers",
+        "marketing_goal": "generate enquires",
+        "campaign": {
+            "objective": "generate enquires",
+            "target_audience": "home decor customers",
+            "core_message": [
+                "Address customer concern: Customers may worry about fragile products being damaged during delivery."
+            ],
+            "ad_angles": [
+                "Highlight: Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
+            ],
+            "call_to_action": [
+                "Enquire now to explore available mirror designs."
+            ],
+            "content_ideas": [
+                "Create a product showcase highlighting mirror designs, dimensions and delivery information."
+            ]
+        },
+        "decisions": {
+            "campaign_objective": "generate enquires",
+            "total_decisions": 2,
+            "decisions": [
+                {
+                    "issue": "Customers may worry about fragile products being damaged during delivery.",
+                    "decision": "Address customer concerns about delivery safety.",
+                    "reason": "The market data identifies delivery damage as a potential customer concern.",
+                    "recommended_action": "Include packaging and delivery information in campaign messaging."
+                },
+                {
+                    "issue": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions.",
+                    "decision": "Highlight important purchase factors.",
+                    "reason": "These factors may influence customer purchasing decisions.",
+                    "recommended_action": "Include product dimensions, visuals, pricing and available reviews in campaign content."
+                }
+            ],
+            "status": "evaluation_completed"
+        },
+        "performance": {
+            "impressions": 10000,
+            "clicks": 150,
+            "enquiries": 6,
+            "ctr_percent": 1.5,
+            "conversion_rate_percent": 4.0,
+            "observations": [
+                "Click-through rate is below the demo benchmark. Review the ad message and creative.",
+                "Enquiry conversion is below the demo benchmark. Review the landing page and enquiry process."
+            ],
+            "status": "evaluation_completed"
+        },
+        "status": "evaluated"
+    },
+    {
+        "product": "mirror",
+        "target_market": "houseowners in mumbai",
+        "marketing_goal": "reach",
+        "campaign": {
+            "objective": "reach",
+            "target_audience": "houseowners in mumbai",
+            "core_message": [
+                "Address customer concern: Customers may worry about fragile products being damaged during delivery."
+            ],
+            "ad_angles": [
+                "Highlight: Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
+            ],
+            "call_to_action": [
+                "Enquire now to explore available mirror designs."
+            ],
+            "content_ideas": [
+                "Create a product showcase highlighting mirror designs, dimensions and delivery information."
+            ]
+        },
+        "decisions": {
+            "campaign_objective": "reach",
+            "total_decisions": 2,
+            "decisions": [
+                {
+                    "issue": "Customers may worry about fragile products being damaged during delivery.",
+                    "decision": "Address customer concerns about delivery safety.",
+                    "reason": "The market data identifies delivery damage as a potential customer concern.",
+                    "recommended_action": "Include packaging and delivery information in campaign messaging."
+                },
+                {
+                    "issue": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions.",
+                    "decision": "Highlight important purchase factors.",
+                    "reason": "These factors may influence customer purchasing decisions.",
+                    "recommended_action": "Include product dimensions, visuals, pricing and available reviews in campaign content."
+                }
+            ],
+            "status": "evaluation_completed"
+        },
+        "performance": {
+            "impressions": 10000,
+            "clicks": 150,
+            "enquiries": 6,
+            "ctr_percent": 1.5,
+            "conversion_rate_percent": 4.0,
+            "observations": [
+                "CTR is below the illustrative demo threshold. Review ad messaging and creative.",
+                "Enquiry conversion is below the illustrative demo threshold. Review the landing page and enquiry process."
+            ],
+            "status": "evaluation_completed"
+        },
+        "recommendations": {
+            "total_recommendations": 2,
+            "recommendations": [
+                {
+                    "area": "Ad Creative",
+                    "issue": "Low click-through rate",
+                    "action": "Test different headlines, product visuals and ad messaging."
+                },
+                {
+                    "area": "Landing Page",
+                    "issue": "Low enquiry conversion",
+                    "action": "Review page clarity, product information and enquiry process."
+                }
+            ],
+            "status": "recommendations_generated"
+        },
+        "status": "evaluated"
+    },
+    {
+        "product": "mirror",
+        "target_market": "houseowner",
+        "marketing_goal": "reach",
+        "campaign": {
+            "objective": "reach",
+            "target_audience": "houseowner",
+            "core_message": [
+                "Address customer concern: Customers may worry about fragile products being damaged during delivery."
+            ],
+            "ad_angles": [
+                "Highlight: Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
+            ],
+            "call_to_action": [
+                "Enquire now to explore available mirror designs."
+            ],
+            "content_ideas": [
+                "Create a product showcase highlighting mirror designs, dimensions and delivery information."
+            ]
+        },
+        "decisions": {
+            "campaign_objective": "reach",
+            "total_decisions": 2,
+            "decisions": [
+                {
+                    "issue": "Customers may worry about fragile products being damaged during delivery.",
+                    "decision": "Address customer concerns about delivery safety.",
+                    "reason": "The market data identifies delivery damage as a potential customer concern.",
+                    "recommended_action": "Include packaging and delivery information in campaign messaging."
+                },
+                {
+                    "issue": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions.",
+                    "decision": "Highlight important purchase factors.",
+                    "reason": "These factors may influence customer purchasing decisions.",
+                    "recommended_action": "Include product dimensions, visuals, pricing and available reviews in campaign content."
+                }
+            ],
+            "status": "evaluation_completed"
+        },
+        "performance": {
+            "impressions": 10000,
+            "clicks": 150,
+            "enquiries": 6,
+            "ctr_percent": 1.5,
+            "conversion_rate_percent": 4.0,
+            "observations": [
+                "CTR is below the illustrative demo threshold. Review ad messaging and creative.",
+                "Enquiry conversion is below the illustrative demo threshold. Review the landing page and enquiry process."
+            ],
+            "status": "evaluation_completed"
+        },
+        "recommendations": {
+            "total_recommendations": 2,
+            "recommendations": [
+                {
+                    "area": "Ad Creative",
+                    "issue": "Low click-through rate",
+                    "action": "Test different headlines, product visuals and ad messaging."
+                },
+                {
+                    "area": "Landing Page",
+                    "issue": "Low enquiry conversion",
+                    "action": "Review page clarity, product information and enquiry process."
+                }
+            ],
+            "status": "recommendations_generated"
+        },
+        "status": "evaluated"
+    },
+    {
+        "product": "mirror",
+        "target_market": "houseowners in mumbai",
+        "marketing_goal": "reach",
+        "campaign": {
+            "objective": "reach",
+            "target_audience": "houseowners in mumbai",
+            "core_message": [
+                "Address customer concern: Customers may worry about fragile products being damaged during delivery."
+            ],
+            "ad_angles": [
+                "Highlight: Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
+            ],
+            "call_to_action": [
+                "Enquire now to explore available mirror designs."
+            ],
+            "content_ideas": [
+                "Create a product showcase highlighting mirror designs, dimensions and delivery information."
+            ]
+        },
+        "decisions": {
+            "campaign_objective": "reach",
+            "total_decisions": 2,
+            "decisions": [
+                {
+                    "issue": "Customers may worry about fragile products being damaged during delivery.",
+                    "decision": "Address customer concerns about delivery safety.",
+                    "reason": "The market data identifies delivery damage as a potential customer concern.",
+                    "recommended_action": "Include packaging and delivery information in campaign messaging."
+                },
+                {
+                    "issue": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions.",
+                    "decision": "Highlight important purchase factors.",
+                    "reason": "These factors may influence customer purchasing decisions.",
+                    "recommended_action": "Include product dimensions, visuals, pricing and available reviews in campaign content."
+                }
+            ],
+            "status": "evaluation_completed"
+        },
+        "performance": {
+            "impressions": 10000,
+            "clicks": 150,
+            "enquiries": 6,
+            "ctr_percent": 1.5,
+            "conversion_rate_percent": 4.0,
+            "observations": [
+                "CTR is below the illustrative demo threshold. Review ad messaging and creative.",
+                "Enquiry conversion is below the illustrative demo threshold. Review the landing page and enquiry process."
+            ],
+            "status": "evaluation_completed"
+        },
+        "recommendations": {
+            "total_recommendations": 2,
+            "recommendations": [
+                {
+                    "area": "Ad Creative",
+                    "issue": "Low click-through rate",
+                    "action": "Test different headlines, product visuals and ad messaging."
+                },
+                {
+                    "area": "Landing Page",
+                    "issue": "Low enquiry conversion",
+                    "action": "Review page clarity, product information and enquiry process."
+                }
+            ],
+            "status": "recommendations_generated"
+        },
+        "status": "evaluated"
+    }
+]

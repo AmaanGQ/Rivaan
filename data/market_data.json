@@ -1,0 +1,32 @@
+[
+  {
+    "topic": "customer",
+    "market": "home_decor",
+    "insight": "Customers often compare design, quality, price and delivery reliability before buying mirrors."
+  },
+  {
+    "topic": "customer",
+    "market": "home_decor",
+    "insight": "Homeowners commonly look for mirrors for bedrooms, living rooms, bathrooms and entryways."
+  },
+  {
+    "topic": "problem",
+    "market": "home_decor",
+    "insight": "Customers may worry about fragile products being damaged during delivery."
+  },
+  {
+    "topic": "competitor",
+    "market": "home_decor",
+    "insight": "Customers can compare local stores, marketplaces and specialized online sellers."
+  },
+  {
+    "topic": "decision_factor",
+    "market": "home_decor",
+    "insight": "Price, product appearance, dimensions, reviews and delivery experience can influence purchase decisions."
+  },
+  {
+    "topic": "trend",
+    "market": "home_decor",
+    "insight": "Online home-decor shopping allows customers to compare products before visiting physical stores."
+  }
+]

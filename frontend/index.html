@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RIVAAN | AI Marketing Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .template-studio {
+            display: grid;
+            grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .studio-panel {
+            background: var(--card-bg, #151b2b);
+            border: 1px solid var(--border-color, #293247);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .studio-panel h2 {
+            margin-top: 0;
+        }
+
+        .studio-field {
+            margin-bottom: 18px;
+        }
+
+        .studio-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .studio-field input,
+        .studio-field textarea,
+        .studio-field select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border-radius: 9px;
+            border: 1px solid var(--border-color, #35415a);
+            background: var(--input-bg, #0e1422);
+            color: inherit;
+            font: inherit;
+        }
+
+        .studio-field textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .template-preview {
+            min-height: 420px;
+            box-sizing: border-box;
+        }
+
+        .template-preview h2 {
+            line-height: 1.2;
+        }
+
+        .template-meta {
+            margin-top: 20px;
+            overflow-wrap: anywhere;
+        }
+
+        .template-meta p {
+            margin: 10px 0;
+        }
+
+        .studio-message {
+            margin-top: 12px;
+            color: var(--text-secondary, #aab3c5);
+        }
+
+        @media (max-width: 800px) {
+            .template-studio {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>RIVAAN<span>.</span></h2>
+            <p>AI Marketing Assistant</p>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <button class="nav-item active" data-page="dashboardPage">
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-page="campaignPage">
+                Campaign Generator
+            </button>
+
+            <button class="nav-item" data-page="templatePage">
+                Template Studio
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>RIVAAN AI</p>
+            <small>Marketing Intelligence Platform</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- DASHBOARD -->
+
+        <section class="page" id="dashboardPage">
+
+            <header class="page-header">
+                <div>
+                    <h1>Welcome to RIVAAN</h1>
+                    <p>Your marketing intelligence workspace.</p>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+                    <h3>Campaign Generator</h3>
+                    <p>Generate marketing strategies and campaign ideas.</p>
+                    <button onclick="showPage('campaignPage')">
+                        Open Campaign Studio
+                    </button>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Template Studio</h3>
+                    <p>Create structured marketing creative blueprints.</p>
+                    <button onclick="showPage('templatePage')">
+                        Open Template Studio
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAMPAIGN GENERATOR -->
+
+        <section class="page hidden" id="campaignPage">
+
+            <header class="page-header">
+                <div>
+                    <h1>Campaign Generator</h1>
+                    <p>Build a marketing campaign for your product.</p>
+                </div>
+            </header>
+
+            <div class="studio-panel">
+
+                <div class="studio-field">
+                    <label for="productName">Product Name</label>
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="e.g. Premium Bathroom Mirror"
+                    >
+                </div>
+
+                <div class="studio-field">
+                    <label for="targetAudience">Target Audience</label>
+                    <input
+                        type="text"
+                        id="targetAudience"
+                        placeholder="e.g. Homeowners"
+                    >
+                </div>
+
+                <div class="studio-field">
+                    <label for="marketingGoal">Marketing Goal</label>
+                    <select id="marketingGoal">
+                        <option value="">Select a goal</option>
+                        <option value="sales">Sales</option>
+                        <option value="awareness">Brand Awareness</option>
+                        <option value="leads">Lead Generation</option>
+                        <option value="engagement">Engagement</option>
+                    </select>
+                </div>
+
+                <div class="studio-field">
+                    <label for="campaignBudget">Campaign Budget (INR)</label>
+                    <input
+                        type="number"
+                        id="campaignBudget"
+                        min="0"
+                        placeholder="e.g. 5000"
+                    >
+                </div>
+
+                <button id="generateButton">
+                    Generate Campaign
+                </button>
+
+                <p id="campaignMessage" class="studio-message"></p>
+
+            </div>
+
+            <div id="campaignResults" class="hidden">
+                <h2>Campaign Blueprint</h2>
+                <pre id="campaignOutput"></pre>
+            </div>
+
+        </section>
+
+
+        <!-- TEMPLATE STUDIO -->
+
+        <section class="page hidden" id="templatePage">
+
+            <header class="page-header">
+                <div>
+                    <h1>AI Template Studio</h1>
+                    <p>Create marketing creative blueprints for your business.</p>
+                </div>
+            </header>
+
+            <div class="template-studio">
+
+                <!-- INPUT FORM -->
+
+                <div class="studio-panel">
+
+                    <h2>Creative Brief</h2>
+
+                    <div class="studio-field">
+                        <label for="templateProductName">
+                            Product / Business Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="templateProductName"
+                            placeholder="e.g. Premium Bathroom Mirror"
+                        >
+                    </div>
+
+                    <div class="studio-field">
+                        <label for="templateProductDescription">
+                            Product Description
+                        </label>
+
+                        <textarea
+                            id="templateProductDescription"
+                            placeholder="Describe your product and its benefits..."
+                        ></textarea>
+                    </div>
+
+                    <div class="studio-field">
+                        <label for="templateAudience">
+                            Target Audience
+                        </label>
+
+                        <input
+                            type="text"
+                            id="templateAudience"
+                            placeholder="e.g. Homeowners and interior designers"
+                        >
+                    </div>
+
+                    <div class="studio-field">
+                        <label for="templateGoal">
+                            Marketing Objective
+                        </label>
+
+                        <select id="templateGoal">
+                            <option value="">Select objective</option>
+                            <option value="sales">Sales</option>
+                            <option value="awareness">Brand Awareness</option>
+                            <option value="leads">Lead Generation</option>
+                            <option value="engagement">Engagement</option>
+                        </select>
+                    </div>
+
+                    <div class="studio-field">
+                        <label for="templatePlatform">
+                            Platform
+                        </label>
+
+                        <select id="templatePlatform">
+                            <option value="instagram_post">
+                                Instagram Post
+                            </option>
+
+                            <option value="instagram_story">
+                                Instagram Story
+                            </option>
+
+                            <option value="instagram_carousel">
+                                Instagram Carousel
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="studio-field">
+                        <label for="templateStyle">
+                            Design Style
+                        </label>
+
+                        <select id="templateStyle">
+                            <option value="modern">Modern</option>
+                            <option value="premium">Premium</option>
+                            <option value="minimal">Minimal</option>
+                            <option value="bold">Bold</option>
+                            <option value="professional">Professional</option>
+                        </select>
+                    </div>
+
+                    <button
+                        id="generateTemplateButton"
+                        class="primary-button"
+                    >
+                        Generate Template
+                    </button>
+
+                    <p
+                        id="templateMessage"
+                        class="studio-message"
+                        aria-live="polite"
+                    ></p>
+
+                </div>
+
+
+                <!-- PREVIEW -->
+
+                <div class="studio-panel">
+
+                    <h2>Creative Preview</h2>
+
+                    <div
+                        id="templateResult"
+                        class="hidden"
+                        aria-live="polite"
+                    ></div>
+
+                    <div id="templateEmptyState">
+                        <div style="
+                            min-height:350px;
+                            display:flex;
+                            flex-direction:column;
+                            align-items:center;
+                            justify-content:center;
+                            text-align:center;
+                            opacity:.65;
+                        ">
+                            <div style="font-size:48px;">✦</div>
+                            <h3>Your creative starts here</h3>
+                            <p>
+                                Complete the creative brief and generate
+                                your marketing template.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll(".page").forEach(page => {
+            page.classList.add("hidden");
+        });
+
+        const target = document.getElementById(pageId);
+
+        if (target) {
+            target.classList.remove("hidden");
+        }
+
+        document.querySelectorAll("[data-page]").forEach(item => {
+            item.classList.toggle(
+                "active",
+                item.dataset.page === pageId
+            );
+        });
+    }
+
+    document.querySelectorAll("[data-page]").forEach(item => {
+        item.addEventListener("click", () => {
+            showPage(item.dataset.page);
+        });
+    });
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
